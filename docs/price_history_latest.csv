@@ -20,9 +20,9 @@ MemoryZone,SSD,SSD SanDisk Optimus GX 7100 500GB PCIe Gen4 x4 NVMe M.2 SDSP71500
 MemoryZone,SSD,SSD Western Digital Blue SN5100 1TB PCIe Gen4 x4 NVMe M.2 WDS100T5B0E,4.350.000,+0%,,,,https://memoryzone.com.vn/ssd-western-digital-blue-sn5100-1tb-pcie-gen4-x4-nvme-m-2-wds100t5b0e
 MemoryZone,SSD,SSD WD Black SN7100 1TB PCIe Gen4 x4 NVMe M.2 WDS100T4X0E,4.690.000,+0%,,,,https://memoryzone.com.vn/ssd-wd-black-sn7100-1tb-pcie-gen4-x4-nvme-m-2-wds100t4x0e
 MemoryZone,SSD,SSD Biwin NV7200 2TB M.2 PCIe Gen4 x4 NVMe BNV720002TB-RGX,5.700.000,,,,,https://memoryzone.com.vn/ssd-biwin-nv7200-2tb-m-2-pcie-gen4-x4-nvme-bnv720002tb-rgx
+MemoryZone,SSD,SSD Lexar Play X 1TB M.2 PCIe Gen4 x4 NVMe LNMPLYX001T-RNNNG,5.700.000,,,,,https://memoryzone.com.vn/ssd-lexar-play-x-1tb-m-2-pcie-gen4-x4-nvme-lnmplyx001t-rnnng
 MemoryZone,SSD,SSD Kioxia Exceria Basic 2TB M.2 PCIe Gen4 x4 BiCS FLASH LSF10Z002TG8,5.850.000,+0%,,,,https://memoryzone.com.vn/ssd-kioxia-exceria-basic-2tb-m-2-pcie-gen4-x4-bics-flash-lsf10z002tg8
 MemoryZone,SSD,SSD Kioxia (TOSHIBA) Exceria Plus G3 2TB M.2 PCIe Gen4 x4 BiCS FLASH LSD10Z002TG8,5.880.000,+0%,,,,https://memoryzone.com.vn/ssd-kioxia-toshiba-exceria-plus-g3-2tb-m-2-pcie-gen4-x4-bics-flash-lsd10z002tg8
-MemoryZone,SSD,SSD HP FX900 Plus 2TB M.2 PCIe 4.0 x4 NVMe 7F618AA,5.950.000,+0%,,,,https://memoryzone.com.vn/ssd-hp-fx900-plus-2tb-m-2-pcie-4-0-x4-nvme-7f618aa
 MemoryZone,Laptop,"Laptop Lenovo V14 G5 IRL 83HD0062VA (i5-13420H, Intel Graphics, RAM 16GB DDR5, SSD 512GB, 14 Inch IPS FHD 60Hz, NoOS)",22.500.000,+0%,,,,https://memoryzone.com.vn/laptop-lenovo-v14-g5-83hd0062va
 MemoryZone,Laptop,"Laptop ASUS ExpertBook P1 P1403CVA-C5H16-63WS (Core 5 210H, Intel Graphics, RAM 16GB DDR5, SSD 512GB, 14 Inch IPS FHD 60Hz, Win 11 Home)",24.200.000,+0%,,,,https://memoryzone.com.vn/laptop-asus-expertbook-p1-p1403cva-c5h16-63ws
 MemoryZone,Laptop,"Laptop Lenovo ThinkBook 16 G8 IRL 21SH0097VN (Core 5 210H, Intel Graphics, RAM 16GB DDR5, SDD 512GB, 16 Inch IPS WUXGA 60Hz, Window 11 Home)",25.900.000,+0%,,,,https://memoryzone.com.vn/laptop-lenovo-thinkbook-16-g8-irl-21sh0097vn
@@ -66,6 +66,7 @@ MemoryZone,VGA - Card màn hình,VGA Gigabyte GeForce RTX 5060 WINFORCE OC 8GB G
 MemoryZone,VGA - Card màn hình,VGA MSI GeForce RTX 5060 SHADOW 2X OC 8GB GDDR7,12.990.000,+0%,,,,https://memoryzone.com.vn/vga-msi-geforce-rtx-5060-shadow-2x-oc-8gb-gddr7
 MemoryZone,VGA - Card màn hình,VGA MSI GeForce RTX 5060 VENTUS 2X OC V1 8GB GDDR7,13.150.000,+0%,,,,https://memoryzone.com.vn/vga-msi-geforce-rtx-5060-ventus-2x-oc-v1-8gb-gddr7
 MemoryZone,VGA - Card màn hình,VGA MSI GeForce RTX 5060 VENTUS 2X OC 8GB GDDR7,13.150.000,+0%,,,,https://memoryzone.com.vn/vga-msi-geforce-rtx-5060-ventus-2x-oc-8gb-gddr7
+MemoryZone,VGA - Card màn hình,VGA Asus Dual GeForce RTX 5060 OC Edition 8GB GDDR7 DUAL-RTX5060-O8G,13.300.000,,,,,https://memoryzone.com.vn/vga-asus-dual-geforce-rtx-5060-oc-edition-8gb-gddr7-dual-rtx5060-o8g
 MemoryZone,VGA - Card màn hình,VGA ASUS T1 GeForce RTX 5060 Ti 8GB GDDR7 OC Edition,16.500.000,+0%,,,,https://memoryzone.com.vn/vga-asus-t1-geforce-rtx-5060-ti-8gb-gddr7-oc-edition
 MemoryZone,VGA - Card màn hình,VGA ASUS Dual GeForce RTX 5060 Ti OC Edition 16GB GDDR7,20.900.000,+0%,,,,https://memoryzone.com.vn/vga-asus-dual-geforce-rtx-5060-ti-oc-edition-16gb-gddr7
 MemoryZone,VGA - Card màn hình,VGA Gigabyte Radeon RX 9070 XT GAMING OC 16GB GDDR6,23.500.000,+0%,,,,https://memoryzone.com.vn/vga-gigabyte-radeon-rx-9070-xt-gaming-oc-16gb-gddr6
@@ -76,12 +77,12 @@ MemoryZone,VGA - Card màn hình,VGA Asus ROG Strix GeForce RTX 5070 OC Edition 
 MemoryZone,VGA - Card màn hình,VGA MSI GeForce RTX 5070 Ti 16G FRIEREN EDITION OC 16GB GDDR7,36.500.000,+0%,,,,https://memoryzone.com.vn/vga-msi-geforce-rtx-5070-ti-16g-frieren-edition-oc-16gb-gddr7
 MemoryZone,VGA - Card màn hình,VGA MSI GeForce RTX 5070 Ti 16GB SHADOW 3X OC GDDR7,36.500.000,+0%,,,,https://memoryzone.com.vn/vga-msi-geforce-rtx-5070-ti-16gb-shadow-3x-oc-gddr7
 MemoryZone,VGA - Card màn hình,VGA Leadtek NVIDIA RTX PRO 2000 Blackwell 16GB GDDR7,38.500.000,+0%,,,,https://memoryzone.com.vn/vga-leadtek-nvidia-rtx-pro-2000-blackwell-16gb-gddr7
-MemoryZone,VGA - Card màn hình,VGA Asus PRIME GeForce RTX 5070 Ti 16GB GDDR7 OC Edition PRIME-RTX5070TI-O16G,38.500.000,+0%,,,,https://memoryzone.com.vn/vga-asus-prime-geforce-rtx-5070-ti-16gb-gddr7-oc-edition-prime-rtx5070ti-o16g
 MemoryZone,Mainboard,Mainboard MSI PRO H610M-E DDR4,1.600.000,+0%,,,,https://memoryzone.com.vn/mainboard-pc-msi-pro-h610m-e-ddr4
 MemoryZone,Mainboard,Mainboard MSI PRO H610M-S WIFI DDR4,2.050.000,+0%,,,,https://memoryzone.com.vn/mainboard-msi-pro-h610m-s-wifi-ddr4
 MemoryZone,Mainboard,Mainboard MSI PRO B760M-B DDR4,2.250.000,+0%,,,,https://memoryzone.com.vn/mainboard-msi-b760m-b-ddr4-2
 MemoryZone,Mainboard,Mainboard ASUS PRIME H810M-K DDR5,2.450.000,+0%,,,,https://memoryzone.com.vn/mainboard-asus-prime-h810m-k-ddr5
 MemoryZone,Mainboard,Mainboard ASRock H810M-H DDR5,2.450.000,+0%,,,,https://memoryzone.com.vn/mainboard-asrock-h810m-h-ddr5
+MemoryZone,Mainboard,Mainboard ASUS PRIME B550M-A WIFI II DDR4,2.590.000,,,,,https://memoryzone.com.vn/mainboard-asus-prime-b550m-a-wifi-ii-ddr4
 MemoryZone,Mainboard,Mainboard ASUS B760M-AYW WIFI DDR4,2.600.000,+0%,,,,https://memoryzone.com.vn/mainboard-pc-asus-b760m-ayw-wifi-d4
 MemoryZone,Mainboard,Mainboard MSI B760M GAMING PLUS WIFI DDR4,3.150.000,+0%,,,,https://memoryzone.com.vn/mainboard-pc-msi-b760m-gaming-plus-wifi-ddr4
 MemoryZone,Mainboard,Mainboard MSI PRO B840M-P WIFI6E DDR5,3.200.000,+0%,,,,https://memoryzone.com.vn/mainboard-msi-pro-b840m-p-wifi6e-ddr5
@@ -94,7 +95,6 @@ MemoryZone,Mainboard,Mainboard MSI B860M GAMING WIFI DDR5,3.950.000,+0%,,,,https
 MemoryZone,Mainboard,Mainboard MSI MPG B760I EDGE WIFI DDR5,4.750.000,+0%,,,,https://memoryzone.com.vn/mainboard-msi-mpg-b760i-edge-wifi-ddr5
 MemoryZone,Mainboard,Mainboard MSI MAG B760M MORTAR WIFI II DDR5,4.800.000,+0%,,,,https://memoryzone.com.vn/mainboard-pc-msi-mag-b760m-mortar-wifi-ii
 MemoryZone,Mainboard,Mainboard ASRock B860M Steel Legend WiFi DDR5,4.850.000,+0%,,,,https://memoryzone.com.vn/mainboard-asrock-b860m-steel-legend-wifi-ddr5
-MemoryZone,Mainboard,Mainboard ASUS ROG STRIX B760-G GAMING WIFI DDR5,4.890.000,+0%,,,,https://memoryzone.com.vn/mainboard-pc-asus-rog-strix-b760-g-gaming-wifi-ddr5
 MemoryZone,PSU - Nguồn máy tính,Nguồn máy tính Gamdias AURA GP550 550W PSAURAGP550GA,590.000,+0%,,,,https://memoryzone.com.vn/nguon-may-tinh-gamdias-aura-gp550-550w-psauragp550ga
 MemoryZone,PSU - Nguồn máy tính,Nguồn máy tính Gigabyte P650SS 650W 80 Plus Silver GP-P650SS,1.090.000,+0%,,,,https://memoryzone.com.vn/nguon-may-tinh-gigabyte-p650ss-650w-80-plus-silver-gp-p650ss
 MemoryZone,PSU - Nguồn máy tính,Nguồn máy tính MSI MAG A650BNL 650W 80 Plus Bronze MAG-A650BNL,1.150.000,+0%,,,,https://memoryzone.com.vn/nguon-may-tinh-msi-mag-a650bnl-650w-80-plus-bronze-mag-a650bnl
@@ -204,9 +204,9 @@ HACOM (Hà Nội),Laptop,Laptop Acer Swift Go AI SFG14-75-765M (NX.JNBSV.004) (U
 HACOM (Hà Nội),Laptop,Laptop Acer Nitro Propanel ANV16-72-71T9 (NH.QUNSV.001) (Core 7 240H/16GB RAM D5/512GB SSD/RTX5060 8GB/16.0FHD+ 180Hz/Win11/Đen),45.999.000,,,,,https://hacom.vn/laptop-acer-nitro-propanel-anv16-72-71t9-ltac1064
 HACOM (Hà Nội),Laptop,Laptop Acer Aspire Go AG15-72P-54GY (NX.JRRSV.002) Core 5-120U/16GB RAM DDR4/512GSSD/15.6 inch FHD/Win 11 SL/Bạc),21.999.000,+0%,,,,https://hacom.vn/laptop-acer-aspire-go-ag15-72p-54gy-ltac1001
 HACOM (Hà Nội),Laptop,Laptop Asus VivoBook E1404FA-EB935W (R5 40/16GB RAM/512GB SSD/14 FHD/Win11/Bạc),20.490.000,-2.4%,,,,https://hacom.vn/laptop-asus-vivobook-e1404fa-eb935w-ltau1082
+HACOM (Hà Nội),Laptop,Laptop Gigabyte A16 (A16-CMHI2VN893SH) (i7 13620H/16GB RAM/512GB SSD/RTX 4050 6G/WF6E/16.0FHD+ 165Hz/Win 11/Đen),33.999.000,+3%,,,,https://hacom.vn/laptop-gigabyte-a16-a16-cmhi2vn893sh-ltgi0066
 HACOM (Hà Nội),Laptop,Laptop Dell Pro 14 Essential PV14250 71084489 (Core 5-120U/16GB DDR5/1TB SSD/14 inch FHD+/Win 11 Home/Bạc),26.999.000,,,,,https://hacom.vn/laptop-dell-pro-14-essential-pv14250-71084489-ltdl0666
 HACOM (Hà Nội),Laptop,Laptop HP OmniBook 7 14-fr0033TU (C1MN2PA) (Ultra 5 225U/16GB RAM/512GB SSD/14 WUXGA/Win11&OfficeHS24+365/Bạc),30.999.000,+0%,,,,https://hacom.vn/laptop-hp-omnibook-7-14-fr0033au-c1mn2pa
-HACOM (Hà Nội),Laptop,Laptop HP OmniBook 5 16-ag1068AU (BZ7T0PA) (Ryzen AI 5 340/16GB RAM/512GB SSD/16 WUXGA Cảm ứng /Win11&OfficeHS24+365/Bạc),28.699.000,+0%,,,,https://hacom.vn/laptop-hp-omnibook-5-16-ag1068au-bz7t0pa
 HACOM (Hà Nội),HDD,"Ổ cứng HDD WD Ultrastar DC HA340 8TB 3.5 inch, 7200RPM, SATA, 256MB Cache (WUS721208BLE6L4)",13.999.000,+0%,,,,https://hacom.vn/o-cung-hdd-wd-ultrastar-dc-ha340-8tb-35-inch-7200rpm-sata-256mb-cache-hdwd0585
 HACOM (Hà Nội),HDD,"Ổ Cứng HDD SEAGATE Barracuda 2TB 3.5 inch 7200RPM, SATA III, 256MB Cache (ST2000DM008)",4.990.000,+0%,,,,https://hacom.vn/o-cung-hdd-seagate-barracuda-2tb-3.5-inch-7200rpm-sata-iii-256mb-cache
 HACOM (Hà Nội),HDD,"Ổ Cứng HDD SEAGATE Barracuda 4TB 3.5 inch 5400RPM, SATA III, 256MB Cache (ST4000DM004)",5.990.000,+0%,,,,https://hacom.vn/o-cung-hdd-seagate-barracuda-4tb-3.5-inch-5400rpm-sata-iii-256mb-cache
@@ -258,14 +258,12 @@ HACOM (Hà Nội),VGA - Card màn hình,Card màn hình Gigabyte RTX 3050 WINDFO
 HACOM (Hà Nội),Mainboard,Mainboard ASUS TUF GAMING B760M-PLUS WIFI D4,4.799.000,+0%,,,,https://hacom.vn/mainboard-asus-tuf-gaming-b760m-plus-wifi-d4
 HACOM (Hà Nội),Mainboard,Mainboard ASUS TUF GAMING Z890-PLUS WIFI DDR5,8.999.000,+0%,,,,https://hacom.vn/mainboard-asus-tuf-gaming-z890-plus-wifi-ddr5
 HACOM (Hà Nội),Mainboard,Mainboard Gigabyte B860M GAMING X WIFI 6E,5.899.000,+0%,,,,https://hacom.vn/mainboard-gigabyte-b860m-gaming-x-wifi-6e
-HACOM (Hà Nội),Mainboard,Mainboard ASUS PRIME Z890-P-CSM DDR5,6.599.000,+0%,,,,https://hacom.vn/mainboard-asus-prime-z890-p-csm-mbas0873
 HACOM (Hà Nội),Mainboard,Mainboard ASUS TUF GAMING B760M-PLUS D4,3.999.000,+0%,,,,https://hacom.vn/mainboard-asus-tuf-gaming-b760m-plus-d4
 HACOM (Hà Nội),Mainboard,Mainboard ASUS PRIME B760M-K D4,3.299.000,+0%,,,,https://hacom.vn/mainboard-asus-prime-b760m-k-d4
 HACOM (Hà Nội),Mainboard,"Mainboard ASUS PRIME B550M-A (AMD B550, Socket AM4,m- ATX, 4 khe RAM DRR4)",2.899.000,+0%,,,,https://hacom.vn/mainboard-asus-prime-b550m-a-amd-b550-socket-am4-m-atx-4-khe-ram-drr4
 HACOM (Hà Nội),Mainboard,Mainboard ASUS PRIME H510M-K R2.0,1.999.000,+0%,,,,https://hacom.vn/mainboard-asus-prime-h510m-k-r2.0
 HACOM (Hà Nội),Mainboard,Mainboard ASUS PRIME Z790-P WIFI-CSM DDR5,6.999.000,+0%,,,,https://hacom.vn/mainboard-asus-prime-z790-p-wifi-csm
 HACOM (Hà Nội),Mainboard,Mainboard ASUS TUF GAMING B650M-E WIFI DDR5,5.999.000,+0%,,,,https://hacom.vn/mainboard-asus-tuf-gaming-b650m-e-wifi-ddr5
-HACOM (Hà Nội),Mainboard,Mainboard ASUS PRIME B760M-A D4-CSM,3.999.000,+0%,,,,https://hacom.vn/mainboard-asus-prime-b760m-a-d4-cms
 HACOM (Hà Nội),Mainboard,Mainboard ASUS TUF GAMING X870-PLUS WIFI,8.599.000,+0%,,,,https://hacom.vn/mainboard-asus-tuf-gaming-x870-plus-wifi
 HACOM (Hà Nội),Mainboard,Mainboard ASUS ROG STRIX X870E-E GAMING WIFI,16.299.000,+0%,,,,https://hacom.vn/mainboard-asus-rog-strix-x870e-e-gaming-wifi
 HACOM (Hà Nội),Mainboard,Mainboard ASUS ROG STRIX X870-F GAMING WIFI,13.999.000,+0%,,,,https://hacom.vn/mainboard-asus-rog-strix-x870-f-gaming-wifi
@@ -279,7 +277,10 @@ HACOM (Hà Nội),Mainboard,Mainboard ASUS PRIME H610M-F WIFI D4,2.699.000,+0%,,
 HACOM (Hà Nội),Mainboard,Mainboard Asus B760M-AYW WIFI D4,3.599.000,+0%,,,,https://hacom.vn/mainboard-asus-b760m-ayw-wifi-d4
 HACOM (Hà Nội),Mainboard,Mainboard Asus B760M-AYW WIFI DDR5,3.799.000,+0%,,,,https://hacom.vn/mainboard-asus-b760m-ayw-wifi-ddr5
 HACOM (Hà Nội),Mainboard,Mainboard Gigabyte X870 AORUS ELITE WIFI7,8.799.000,+0%,,,,https://hacom.vn/mainboard-gigabyte-x870-aorus-elite-wifi7
+HACOM (Hà Nội),Mainboard,Mainboard Gigabyte X870 EAGLE WIFI7,7.999.000,+0%,,,,https://hacom.vn/mainboard-gigabyte-x870-eagle-wifi7
+HACOM (Hà Nội),Mainboard,Mainboard ASUS PRIME Z890-P WIFI-CSM,6.999.000,+0%,,,,https://hacom.vn/mainboard-asus-prime-z890-p-wifi-csm
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn Asus PRIME 750B BLACK ( 80 Plus Bronze),1.999.000,+0%,,,,https://hacom.vn/nguon-asus-prime-750b-black-80-plus-bronze
+HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn Asus PRIME 650B BLACK ( 80 Plus Bronze),1.699.000,+0%,,,,https://hacom.vn/nguon-asus-prime-650b-black-80-plus-bronze
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính AIGO VK550 - 500W (Màu Đen),799.000,+0%,,,,https://hacom.vn/nguon-may-tinh-aigo-vk550-550w-mau-den
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính AIGO VK650 - 650W (80 Plus/ Active PFC/ Single Rail),999.000,+0%,,,,https://hacom.vn/nguon-may-tinh-aigo-vk650-650w-80-plus-active-pfc-single-rail
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn Gigabyte GP- P750GM 750W (80 Plus Gold/Full Modular/Màu Đen),2.649.000,+0%,,,,https://hacom.vn/nguon-gigabyte-gp-p750gm-750w-80-plus-gold-full-modular-mau-den
@@ -289,6 +290,7 @@ HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính AIGO GB750 - 750W 
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính AIGO GB650 - 650W (80 Plus Bronze/Màu Đen),1.599.000,+0%,,,,https://hacom.vn/nguon-may-tinh-aigo-gb650-650w-80-plus-bronze-mau-den
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính AIGO VK350 - 350W (Màu Đen),499.000,+0%,,,,https://hacom.vn/nguon-may-tinh-aigo-vk350-350w-mau-den
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính AIGO GB550 - 550W (80 Plus Bronze/Màu Đen),1.299.000,+0%,,,,https://hacom.vn/nguon-may-tinh-aigo-gb550-550w-80-plus-bronze-mau-den
+HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính Corsair CX750 750W (80 Plus Bronze/ Màu Đen),1.999.000,+0%,,,,https://hacom.vn/nguon-may-tinh-corsair-cx750-80-plus-bronze-mau-den
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính Corsair CX650 650W (80 Plus Bronze/ Màu Đen),1.999.000,+0%,,,,https://hacom.vn/nguon-may-tinh-corsair-cx650-80-plus-bronze-mau-den
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính Cooler Master MWE V3 230V 750 - 750W (80 Plus Bronze/ATX3.1),1.999.000,+0%,,,,https://hacom.vn/nguon-may-tinh-cooler-master-mwe-v3-230v-750-750w-80-plus-bronze-atx3.1
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính GIGABYTE P650SS 650W (80 PLus Silver/Màu Đen),1.999.000,+0%,,,,https://hacom.vn/nguon-may-tinh-gigabyte-p650ss-650w-80-plus-silver-mau-den
@@ -301,8 +303,6 @@ HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính MSI MAG A550BNL 55
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính Corsair RM1000e ATX 3.1 1000W (80 Plus Gold/ Màu Đen),4.849.000,+0%,,,,https://hacom.vn/nguon-may-tinh-corsair-rm1000e-atx-3.1-80-plus-gold-mau-den
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính DARKFLASH PMT850 GOLD - 850W (80 Plus Gold/ATX3.1/PCI-e 5.1/Full Modular),2.689.000,,,,,https://hacom.vn/nguon-may-tinh-darkflash-pmt850-gold-850w-80-plus-gold-atx3.1-pci-e-5.1-full-modular
 HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính DARKFLASH PMT750 GOLD - 750W (80 Plus Gold/ATX3.1/PCI-e 5.1/Full Modular),2.489.000,,,,,https://hacom.vn/nguon-may-tinh-darkflash-pmt750-gold-750w-80-plus-gold-atx3.1-pci-e-5.1-full-modular
-HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn KENOO ESPORT E750 - 750W (Dây dẹt),1.349.000,,,,,https://hacom.vn/nguon-kenoo-esport-e750-750w-day-det
-HACOM (Hà Nội),PSU - Nguồn máy tính,Nguồn máy tính Cooler Master V Platinum 1600 V2 - 1600W (80 plus Platinum/ATX3.1/Full Modular),11.999.000,,,,,https://hacom.vn/nguon-may-tinh-cooler-master-v-platinum-1600-v2-1600w-80-plus-platinum-atx3.1-full-modular
 HACOM (Hà Nội),Màn hình,Màn hình Gigabyte GS25F2A (24.5 inch/FHD/IPS/240Hz/1ms/loa),4.999.000,+0%,,,,https://hacom.vn/man-hinh-gigabyte-gs25f2a
 HACOM (Hà Nội),Màn hình,Màn hình Gigabyte G25F2A (24.5 inch/FHD/IPS/240hz/1ms/loa),4.599.000,+0%,,,,https://hacom.vn/man-hinh-gigabyte-g25f2a
 HACOM (Hà Nội),Màn hình,Màn hình Gigabyte MO27Q2 (27 inch/QHD/QD-OLED/240Hz/0.03ms/loa),16.299.000,+0%,,,,https://hacom.vn/man-hinh-gigabyte-mo27q2
