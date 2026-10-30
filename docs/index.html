@@ -6,134 +6,101 @@
 <title>Giá RAM/SSD/Laptop</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script>
+  // Same light/dark choice as the other tuongphanbase pages, else the system's.
+  (function(){
+    let t = null; try{ t = localStorage.getItem('fleet_theme'); }catch(e){}
+    document.documentElement.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  })();
+</script>
+<link rel="stylesheet" href="../emailer-dashboard/theme.css">
 <style>
-  :root {
-    color-scheme: light dark;
-    --bg: #f7f7f8; --surface: #ffffff; --border: #e4e4e7;
-    --text: #18181b; --muted: #71717a; --faint: #a1a1aa;
-    --accent: #4338ca; --accent-soft: #e0e7ff; --accent-text: #4338ca;
-    --positive: #16a34a; --negative: #dc2626; --grid-line: #f0f0f2;
-    --row-hover: #f4f4f5;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0b0b0d; --surface: #17171a; --border: #2a2a2e;
-      --text: #f4f4f5; --muted: #a1a1aa; --faint: #71717a;
-      --accent: #818cf8; --accent-soft: #312e81; --accent-text: #a5b4fc;
-      --positive: #4ade80; --negative: #f87171; --grid-line: #232326;
-      --row-hover: #1f1f23;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, monospace; font-variant-numeric: tabular-nums; }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 56px; }
+  /* Colours, fonts and the app bar come from ../emailer-dashboard/theme.css, shared by every page.
+     --accent and --grid-line are read by the chart script, so they stay literal colours. */
+  :root { --accent: #3B5BDB; --grid-line: #ECEEF1; }
+  html[data-theme="dark"] { --accent: #8497F0; --grid-line: #262A30; }
+  .mono { font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 20px 24px 48px; }
 
-  header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
-  h1 { font-size: 19px; margin: 0 0 4px; letter-spacing: -0.01em; }
-  .sub { font-size: 12.5px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
-  .sub a { color: var(--accent-text); text-decoration: none; }
-  .sub a:hover { text-decoration: underline; }
-  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--positive); position: relative; flex-shrink: 0; }
-  .live-dot::after {
-    content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 1px solid var(--positive);
-    animation: pulse 2s ease-out infinite;
-  }
-  @keyframes pulse { 0% { transform: scale(.6); opacity: .8; } 100% { transform: scale(1.8); opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .live-dot::after { animation: none; } }
+  .tabs { display: flex; gap: 2px; flex-wrap: wrap; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .tab { font: inherit; font-size: 13px; padding: 8px 12px; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--text-secondary); cursor: pointer; }
+  .tab:hover { color: var(--text); }
+  .tab[aria-selected="true"] { color: var(--text); font-weight: 600; border-bottom-color: var(--brand); }
+  .tab .n { color: var(--text-tertiary); font-weight: 400; margin-left: 2px; }
 
-  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-  .tab {
-    font: inherit; font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 7px;
-    border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer;
-  }
-  .tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .tab .n { color: var(--muted); font-weight: 400; }
-  .tab[aria-selected="true"] .n { color: #e0e7ff; }
-
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 16px; }
-  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
-  .kpi-label { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--faint); margin-bottom: 5px; }
-  .kpi-val { font-size: 15.5px; font-weight: 700; letter-spacing: -0.01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .kpi-val.positive { color: var(--positive); }
-  .kpi-val.negative { color: var(--negative); }
-  .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 16px; }
+  .kpi { padding: 12px 16px; border-left: 1px solid var(--border); min-width: 0; }
+  .kpi:first-child { border-left: none; }
+  .kpi-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+  .kpi-val { font-size: 18px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .kpi-val.positive { color: var(--success); }
+  .kpi-val.negative { color: var(--danger); }
+  .kpi-sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   .controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
-  .search {
-    flex: 1; min-width: 180px; font: inherit; font-size: 13px; padding: 8px 12px;
-    border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text);
-  }
-  .chip {
-    font: inherit; font-size: 12px; font-weight: 600; padding: 5px 11px; border-radius: 999px;
-    border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer;
-  }
-  .chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-text); }
+  .search { flex: 1 1 240px; min-width: 180px; height: 32px; font: inherit; font-size: 13px; padding: 0 10px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--bg); color: var(--text); }
+  .search:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--focus-ring); }
+  .chip { font: inherit; font-size: 12.5px; height: 28px; padding: 0 10px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); background: var(--bg); color: var(--text-secondary); cursor: pointer; }
+  .chip:hover { color: var(--text); }
+  .chip[aria-pressed="true"] { background: var(--brand-tint); border-color: var(--brand); color: var(--brand); font-weight: 600; }
 
-  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  thead th {
-    text-align: left; font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
-    color: var(--faint); padding: 9px 12px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none;
-    white-space: nowrap;
-  }
-  thead th:hover { color: var(--text); }
-  thead th.sorted { color: var(--accent-text); }
-  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--grid-line); font-size: 12.5px; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  thead th { text-align: left; font-size: 12px; font-weight: 600; color: var(--text-secondary); background: var(--surface-alt); padding: 9px 12px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; white-space: nowrap; }
+  thead th:hover, thead th.sorted { color: var(--text); }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
   tbody tr:last-child td { border-bottom: none; }
   tbody tr { cursor: pointer; }
-  tbody tr:hover td { background: var(--row-hover); }
-  .name-cell { max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .site-badge { font-size: 11px; color: var(--muted); }
+  tbody tr:hover td { background: var(--surface-alt); }
+  .name-cell { max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .site-badge { font-size: 12px; color: var(--text-secondary); }
   td.num { text-align: right; }
-  .pct.positive { color: var(--positive); }
-  .pct.negative { color: var(--negative); }
-  .pct.zero { color: var(--faint); }
-  .empty-note { font-size: 12px; color: var(--muted); padding: 30px 0; text-align: center; }
+  .pct.positive { color: var(--success); }
+  .pct.negative { color: var(--danger); }
+  .pct.zero { color: var(--text-tertiary); }
+  .empty-note { font-size: 13px; color: var(--text-secondary); padding: 32px 0; text-align: center; }
 
-  /* --- Modal --- */
-  .modal-backdrop {
-    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 50;
-    align-items: center; justify-content: center; padding: 20px;
-  }
+  .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(15,18,24,.45); z-index: 50; align-items: center; justify-content: center; padding: 20px; }
   .modal-backdrop.open { display: flex; }
-  .modal {
-    background: var(--surface); border-radius: 12px; max-width: 640px; width: 100%;
-    padding: 18px 20px 20px; max-height: 85vh; overflow-y: auto;
-  }
+  .modal { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); max-width: 640px; width: 100%; padding: 16px 18px 18px; max-height: 85vh; overflow-y: auto; }
   .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
-  .modal-title { font-size: 14.5px; font-weight: 700; line-height: 1.35; }
-  .modal-close {
-    font: inherit; font-size: 18px; line-height: 1; background: none; border: none; color: var(--muted);
-    cursor: pointer; padding: 2px 6px; flex-shrink: 0;
-  }
-  .modal-meta { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-  .modal-meta a { color: var(--accent-text); }
+  .modal-title { font-size: 15px; font-weight: 600; line-height: 1.4; }
+  .modal-close { font: inherit; font-size: 13px; background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-md); color: var(--text); cursor: pointer; height: 28px; padding: 0 10px; flex-shrink: 0; }
+  .modal-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; }
+  .modal-meta a { color: var(--brand); }
   .modal-chart-box { height: 260px; position: relative; }
-  .modal-loading { font-size: 12.5px; color: var(--muted); padding: 40px 0; text-align: center; }
+  .modal-loading { font-size: 13px; color: var(--text-secondary); padding: 40px 0; text-align: center; }
 
   @media (max-width: 640px) {
+    .wrap { padding: 16px 16px 40px; }
+    .kpi { border-left: none; border-top: 1px solid var(--border); }
+    .kpi:first-child { border-top: none; }
     table, thead, tbody, tr, th, td { display: block; }
     thead { display: none; }
     tbody tr { border-bottom: 1px solid var(--border); padding: 10px 12px; }
     tbody td { border: none; padding: 2px 0; }
     .name-cell { max-width: 100%; white-space: normal; font-weight: 600; }
     td.num { text-align: left; }
-    td.num::before { content: attr(data-label) ": "; color: var(--muted); }
+    td.num::before { content: attr(data-label) ": "; color: var(--text-secondary); }
   }
 </style>
 </head>
 <body>
+<header class="appbar">
+  <a class="appbar-name" href="../emailer-dashboard/">tuongphanbase</a>
+  <nav class="appbar-tabs" aria-label="Trang">
+    <a href="../emailer-dashboard/">Bot</a>
+    <a href="../emailer-dashboard/prices.html">Giá hôm nay</a>
+    <a href="../emailer-dashboard/projects.html">Dự án</a>
+  </nav>
+</header>
 <div class="wrap">
-  <header>
+  <div class="page-head">
     <div>
       <h1>Giá RAM / SSD / Laptop</h1>
-      <div class="sub"><span class="live-dot"></span> Cập nhật lúc 08:13 30/10/2026 &middot; <a href="https://github.com/tuongphanbase/tech-price-mailer">mã nguồn</a></div>
+      <div class="page-sub">Cập nhật lúc 08:13 30/10/2026</div>
     </div>
-  </header>
+    <a class="btn" href="https://github.com/tuongphanbase/tech-price-mailer">Mã nguồn</a>
+  </div>
 
   <div class="tabs" id="tabs"></div>
   <div class="kpis" id="kpis"></div>
@@ -149,7 +116,7 @@
   <div class="modal">
     <div class="modal-head">
       <div class="modal-title" id="modalTitle"></div>
-      <button class="modal-close" id="modalClose" aria-label="Đóng">&times;</button>
+      <button class="modal-close" id="modalClose">Đóng</button>
     </div>
     <div class="modal-meta" id="modalMeta"></div>
     <div class="modal-chart-box" id="modalChartBox"><div class="modal-loading">Đang tải...</div></div>

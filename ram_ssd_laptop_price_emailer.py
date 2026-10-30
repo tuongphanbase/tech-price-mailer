@@ -1245,13 +1245,13 @@ def _thumb_html(item, size=52):
     url = item.get("image_url")
     if not url:
         return (
-            f"<div style='width:{size}px;height:{size}px;background:#f1f3f5;"
-            f"border-radius:10px;margin:0 auto;'></div>"
+            f"<div style='width:{size}px;height:{size}px;background:#F7F8FA;"
+            f"border-radius:4px;margin:0 auto;'></div>"
         )
     return (
         f"<img src='{escape(url)}' alt='' width='{size}' height='{size}' "
         f"style='width:{size}px;height:{size}px;object-fit:contain;"
-        f"border-radius:10px;border:1px solid #eef0f3;background:#ffffff;"
+        f"border-radius:4px;background:#ffffff;"
         f"display:block;margin:0 auto;' />"
     )
 
@@ -1273,13 +1273,13 @@ def _trend_html(item):
         pct = trend.get(label)
         label_html = escape(label).replace(" ", "&nbsp;")
         if pct is None:
-            parts.append(f"<span style='color:#c0c5cc;'>{label_html}&nbsp;—</span>")
+            parts.append(f"<span style='color:#C9CDD3;'>{label_html}&nbsp;—</span>")
         elif pct > 0:
-            parts.append(f"<span style='color:#dc2626;'>{label_html}&nbsp;▲{pct:g}%</span>")
+            parts.append(f"<span style='color:#C6362B;'>{label_html}&nbsp;▲{pct:g}%</span>")
         elif pct < 0:
-            parts.append(f"<span style='color:#16a34a;'>{label_html}&nbsp;▼{abs(pct):g}%</span>")
+            parts.append(f"<span style='color:#1A7F4B;'>{label_html}&nbsp;▼{abs(pct):g}%</span>")
         else:
-            parts.append(f"<span style='color:#9ca3af;'>{label_html}&nbsp;•0%</span>")
+            parts.append(f"<span style='color:#6E7581;'>{label_html}&nbsp;•0%</span>")
     return (
         "<div style='font-size:10px;margin-top:5px;line-height:1.7;'>"
         + " · ".join(parts)
@@ -1293,8 +1293,8 @@ def _spec_tags_html(item, spec_cols):
     placeholder dashes."""
     specs = item.get("specs", {})
     tags = [
-        f"<span style='display:inline-block;background:#f1f5f9;color:#475569;"
-        f"font-size:10.5px;line-height:1.4;padding:2px 8px;border-radius:10px;"
+        f"<span style='display:inline-block;background:#F1F2F4;color:#596170;"
+        f"font-size:11px;line-height:1.4;padding:2px 8px;border-radius:999px;"
         f"margin:3px 4px 0 0;white-space:nowrap;'>{escape(specs[col])}</span>"
         for col in spec_cols
         if specs.get(col, "—") != "—"
@@ -1315,20 +1315,20 @@ def _price_block_html(price, old_price, align="right"):
             pct = round((1 - cur / old) * 100)
             if pct > 0:
                 badge = (
-                    f"<span style='display:inline-block;background:#fee2e2;color:#dc2626;"
-                    f"font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;"
+                    f"<span style='display:inline-block;background:#FBE9E7;color:#C6362B;"
+                    f"font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;"
                     f"margin-bottom:3px;'>-{pct}%</span><br/>"
                 )
         except (ValueError, ZeroDivisionError):
             pass
         old_line = (
-            f"<div style='font-size:11px;color:#9ca3af;text-decoration:line-through;"
+            f"<div style='font-size:11px;color:#6E7581;text-decoration:line-through;"
             f"margin-top:2px;'>{escape(old_price)} \u20ab</div>"
         )
     return (
         f"<div style='text-align:{align};'>"
         f"{badge}"
-        f"<div style='font-size:14.5px;font-weight:700;color:#111827;'>"
+        f"<div style='font-size:14px;font-weight:600;color:#1D2129;'>"
         f"{escape(price)} \u20ab</div>"
         f"{old_line}"
         f"</div>"
@@ -1368,11 +1368,11 @@ def _card_html(item, spec_cols, fallback_url, thumb_size=100, padding=14, name_s
     link_close = "</a>"
     return (
         f"<table role='presentation' width='100%' cellpadding='0' cellspacing='0' "
-        f"style='border:1px solid #eef0f3;border-radius:12px;background:#ffffff;'>"
+        f"style='border:1px solid #E2E4E8;border-radius:6px;background:#ffffff;'>"
         f"<tr><td style='padding:{padding}px;text-align:center;'>"
         f"{link_open}"
         f"{_thumb_html(item, size=thumb_size)}"
-        f"<div style='font-size:{name_size}px;font-weight:600;color:#1f2937;line-height:1.35;"
+        f"<div style='font-size:{name_size}px;font-weight:500;color:#1D2129;line-height:1.35;"
         f"margin-top:8px;min-height:{round(name_size * 2.6)}px;'>{escape(item['name'])}</div>"
         f"{link_close}"
         f"{tags_block}"
@@ -1415,9 +1415,9 @@ def _render_offer_cards(cat, color, columns=4):
     spec_cols = SPEC_EXTRACTORS.get(cat["key"], (None, []))[1]
     if not cat["items"]:
         body = (
-            f"<div style='font-size:13px;color:#6b7280;padding:8px 0 4px;'>"
+            f"<div style='font-size:13px;color:#596170;padding:8px 0 4px;'>"
             f"Không lấy được sản phẩm nào trong lần chạy này. Xem trực tiếp tại "
-            f"<a href='{escape(cat['url'])}' style='color:{color};'>{escape(cat['url'])}</a>.</div>"
+            f"<a href='{escape(cat['url'])}' style='color:#3B5BDB;'>{escape(cat['url'])}</a>.</div>"
         )
     else:
         # Denser grids get smaller cards - a 100px thumbnail that looks
@@ -1449,19 +1449,17 @@ def _render_offer_cards(cat, color, columns=4):
             + "</table>"
         )
     header_html = (
-        f"<span style='font-size:13px;font-weight:700;color:{color};'>{escape(cat['site_label'])}</span>"
-        f"<span style='font-size:11px;color:#9ca3af;font-weight:400;margin-left:8px;'>"
-        f"<a href='{escape(cat['url'])}' style='color:#9ca3af;'>{escape(cat['url'])}</a></span>"
+        # Retailer names stay dark text; colour is kept for prices and trends.
+        f"<span style='font-size:13px;font-weight:600;color:#1D2129;'>{escape(cat['site_label'])}</span>"
+        f"<span style='font-size:12px;color:#6E7581;font-weight:400;margin-left:8px;'>"
+        f"<a href='{escape(cat['url'])}' style='color:#6E7581;'>{escape(cat['url'])}</a></span>"
     )
     fold_id = f"fold_{cat['site']}_{cat['key']}"
     return _fold_html(
         fold_id,
         header_html,
         f"<div style='margin-top:8px;'>{body}</div>",
-        outer_style=(
-            "margin:16px 0 4px;padding:12px 14px 14px;background:#fafbfc;"
-            "border:1px solid #f0f1f3;border-radius:10px;"
-        ),
+        outer_style="margin:16px 0 4px;padding:12px 0 0;border-top:1px solid #E2E4E8;",
     )
 
 
@@ -1473,134 +1471,101 @@ _PRICE_DASHBOARD_TEMPLATE = """<!DOCTYPE html>
 <title>Giá RAM/SSD/Laptop</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script>
+  // Same light/dark choice as the other tuongphanbase pages, else the system's.
+  (function(){
+    let t = null; try{ t = localStorage.getItem('fleet_theme'); }catch(e){}
+    document.documentElement.setAttribute('data-theme', t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  })();
+</script>
+<link rel="stylesheet" href="../emailer-dashboard/theme.css">
 <style>
-  :root {
-    color-scheme: light dark;
-    --bg: #f7f7f8; --surface: #ffffff; --border: #e4e4e7;
-    --text: #18181b; --muted: #71717a; --faint: #a1a1aa;
-    --accent: #4338ca; --accent-soft: #e0e7ff; --accent-text: #4338ca;
-    --positive: #16a34a; --negative: #dc2626; --grid-line: #f0f0f2;
-    --row-hover: #f4f4f5;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0b0b0d; --surface: #17171a; --border: #2a2a2e;
-      --text: #f4f4f5; --muted: #a1a1aa; --faint: #71717a;
-      --accent: #818cf8; --accent-soft: #312e81; --accent-text: #a5b4fc;
-      --positive: #4ade80; --negative: #f87171; --grid-line: #232326;
-      --row-hover: #1f1f23;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, monospace; font-variant-numeric: tabular-nums; }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 56px; }
+  /* Colours, fonts and the app bar come from ../emailer-dashboard/theme.css, shared by every page.
+     --accent and --grid-line are read by the chart script, so they stay literal colours. */
+  :root { --accent: #3B5BDB; --grid-line: #ECEEF1; }
+  html[data-theme="dark"] { --accent: #8497F0; --grid-line: #262A30; }
+  .mono { font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 20px 24px 48px; }
 
-  header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
-  h1 { font-size: 19px; margin: 0 0 4px; letter-spacing: -0.01em; }
-  .sub { font-size: 12.5px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
-  .sub a { color: var(--accent-text); text-decoration: none; }
-  .sub a:hover { text-decoration: underline; }
-  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--positive); position: relative; flex-shrink: 0; }
-  .live-dot::after {
-    content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 1px solid var(--positive);
-    animation: pulse 2s ease-out infinite;
-  }
-  @keyframes pulse { 0% { transform: scale(.6); opacity: .8; } 100% { transform: scale(1.8); opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .live-dot::after { animation: none; } }
+  .tabs { display: flex; gap: 2px; flex-wrap: wrap; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .tab { font: inherit; font-size: 13px; padding: 8px 12px; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--text-secondary); cursor: pointer; }
+  .tab:hover { color: var(--text); }
+  .tab[aria-selected="true"] { color: var(--text); font-weight: 600; border-bottom-color: var(--brand); }
+  .tab .n { color: var(--text-tertiary); font-weight: 400; margin-left: 2px; }
 
-  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-  .tab {
-    font: inherit; font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 7px;
-    border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer;
-  }
-  .tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .tab .n { color: var(--muted); font-weight: 400; }
-  .tab[aria-selected="true"] .n { color: #e0e7ff; }
-
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 16px; }
-  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
-  .kpi-label { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--faint); margin-bottom: 5px; }
-  .kpi-val { font-size: 15.5px; font-weight: 700; letter-spacing: -0.01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .kpi-val.positive { color: var(--positive); }
-  .kpi-val.negative { color: var(--negative); }
-  .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 16px; }
+  .kpi { padding: 12px 16px; border-left: 1px solid var(--border); min-width: 0; }
+  .kpi:first-child { border-left: none; }
+  .kpi-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+  .kpi-val { font-size: 18px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .kpi-val.positive { color: var(--success); }
+  .kpi-val.negative { color: var(--danger); }
+  .kpi-sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   .controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
-  .search {
-    flex: 1; min-width: 180px; font: inherit; font-size: 13px; padding: 8px 12px;
-    border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text);
-  }
-  .chip {
-    font: inherit; font-size: 12px; font-weight: 600; padding: 5px 11px; border-radius: 999px;
-    border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer;
-  }
-  .chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-text); }
+  .search { flex: 1 1 240px; min-width: 180px; height: 32px; font: inherit; font-size: 13px; padding: 0 10px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--bg); color: var(--text); }
+  .search:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--focus-ring); }
+  .chip { font: inherit; font-size: 12.5px; height: 28px; padding: 0 10px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); background: var(--bg); color: var(--text-secondary); cursor: pointer; }
+  .chip:hover { color: var(--text); }
+  .chip[aria-pressed="true"] { background: var(--brand-tint); border-color: var(--brand); color: var(--brand); font-weight: 600; }
 
-  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  thead th {
-    text-align: left; font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
-    color: var(--faint); padding: 9px 12px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none;
-    white-space: nowrap;
-  }
-  thead th:hover { color: var(--text); }
-  thead th.sorted { color: var(--accent-text); }
-  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--grid-line); font-size: 12.5px; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  thead th { text-align: left; font-size: 12px; font-weight: 600; color: var(--text-secondary); background: var(--surface-alt); padding: 9px 12px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; white-space: nowrap; }
+  thead th:hover, thead th.sorted { color: var(--text); }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
   tbody tr:last-child td { border-bottom: none; }
   tbody tr { cursor: pointer; }
-  tbody tr:hover td { background: var(--row-hover); }
-  .name-cell { max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .site-badge { font-size: 11px; color: var(--muted); }
+  tbody tr:hover td { background: var(--surface-alt); }
+  .name-cell { max-width: 360px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .site-badge { font-size: 12px; color: var(--text-secondary); }
   td.num { text-align: right; }
-  .pct.positive { color: var(--positive); }
-  .pct.negative { color: var(--negative); }
-  .pct.zero { color: var(--faint); }
-  .empty-note { font-size: 12px; color: var(--muted); padding: 30px 0; text-align: center; }
+  .pct.positive { color: var(--success); }
+  .pct.negative { color: var(--danger); }
+  .pct.zero { color: var(--text-tertiary); }
+  .empty-note { font-size: 13px; color: var(--text-secondary); padding: 32px 0; text-align: center; }
 
-  /* --- Modal --- */
-  .modal-backdrop {
-    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 50;
-    align-items: center; justify-content: center; padding: 20px;
-  }
+  .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(15,18,24,.45); z-index: 50; align-items: center; justify-content: center; padding: 20px; }
   .modal-backdrop.open { display: flex; }
-  .modal {
-    background: var(--surface); border-radius: 12px; max-width: 640px; width: 100%;
-    padding: 18px 20px 20px; max-height: 85vh; overflow-y: auto;
-  }
+  .modal { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); max-width: 640px; width: 100%; padding: 16px 18px 18px; max-height: 85vh; overflow-y: auto; }
   .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
-  .modal-title { font-size: 14.5px; font-weight: 700; line-height: 1.35; }
-  .modal-close {
-    font: inherit; font-size: 18px; line-height: 1; background: none; border: none; color: var(--muted);
-    cursor: pointer; padding: 2px 6px; flex-shrink: 0;
-  }
-  .modal-meta { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-  .modal-meta a { color: var(--accent-text); }
+  .modal-title { font-size: 15px; font-weight: 600; line-height: 1.4; }
+  .modal-close { font: inherit; font-size: 13px; background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-md); color: var(--text); cursor: pointer; height: 28px; padding: 0 10px; flex-shrink: 0; }
+  .modal-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; }
+  .modal-meta a { color: var(--brand); }
   .modal-chart-box { height: 260px; position: relative; }
-  .modal-loading { font-size: 12.5px; color: var(--muted); padding: 40px 0; text-align: center; }
+  .modal-loading { font-size: 13px; color: var(--text-secondary); padding: 40px 0; text-align: center; }
 
   @media (max-width: 640px) {
+    .wrap { padding: 16px 16px 40px; }
+    .kpi { border-left: none; border-top: 1px solid var(--border); }
+    .kpi:first-child { border-top: none; }
     table, thead, tbody, tr, th, td { display: block; }
     thead { display: none; }
     tbody tr { border-bottom: 1px solid var(--border); padding: 10px 12px; }
     tbody td { border: none; padding: 2px 0; }
     .name-cell { max-width: 100%; white-space: normal; font-weight: 600; }
     td.num { text-align: left; }
-    td.num::before { content: attr(data-label) ": "; color: var(--muted); }
+    td.num::before { content: attr(data-label) ": "; color: var(--text-secondary); }
   }
 </style>
 </head>
 <body>
+<header class="appbar">
+  <a class="appbar-name" href="../emailer-dashboard/">tuongphanbase</a>
+  <nav class="appbar-tabs" aria-label="Trang">
+    <a href="../emailer-dashboard/">Bot</a>
+    <a href="../emailer-dashboard/prices.html">Giá hôm nay</a>
+    <a href="../emailer-dashboard/projects.html">Dự án</a>
+  </nav>
+</header>
 <div class="wrap">
-  <header>
+  <div class="page-head">
     <div>
       <h1>Giá RAM / SSD / Laptop</h1>
-      <div class="sub"><span class="live-dot"></span> Cập nhật lúc __GENERATED_AT__ &middot; <a href="__REPO_URL__">mã nguồn</a></div>
+      <div class="page-sub">Cập nhật lúc __GENERATED_AT__</div>
     </div>
-  </header>
+    <a class="btn" href="__REPO_URL__">Mã nguồn</a>
+  </div>
 
   <div class="tabs" id="tabs"></div>
   <div class="kpis" id="kpis"></div>
@@ -1616,7 +1581,7 @@ _PRICE_DASHBOARD_TEMPLATE = """<!DOCTYPE html>
   <div class="modal">
     <div class="modal-head">
       <div class="modal-title" id="modalTitle"></div>
-      <button class="modal-close" id="modalClose" aria-label="Đóng">&times;</button>
+      <button class="modal-close" id="modalClose">Đóng</button>
     </div>
     <div class="modal-meta" id="modalMeta"></div>
     <div class="modal-chart-box" id="modalChartBox"><div class="modal-loading">Đang tải...</div></div>
@@ -1924,14 +1889,14 @@ def build_html(categories_data, timestamp):
 
     type_blocks = []
     for type_key in ordered_types:
-        label, icon = TYPE_META.get(type_key, (type_key.title(), "🛒"))
+        label, _icon = TYPE_META.get(type_key, (type_key.title(), ""))  # icons are not drawn: plain headings
         offer_blocks = "".join(
             _render_offer_cards(cat, site_colors[cat["site"]]) for cat in by_type[type_key]
         )
-        header_html = f"<span style='font-size:18px;font-weight:800;color:#111827;'>{icon} {escape(label)}</span>"
-        content_html = f"<div style='height:2px;background:#eef0f3;margin-top:10px;'></div>{offer_blocks}"
+        header_html = f"<span style='font-size:16px;font-weight:600;color:#1D2129;'>{escape(label)}</span>"
+        content_html = offer_blocks
         type_blocks.append(
-            f"<tr><td style='padding:26px 28px 0;'>"
+            f"<tr><td style='padding:20px 20px 0;'>"
             f"{_fold_html(f'fold_type_{type_key}', header_html, content_html)}"
             f"</td></tr>"
         )
@@ -1942,9 +1907,9 @@ def build_html(categories_data, timestamp):
         _pages_owner, _pages_repo = _gh_repo.split("/", 1)
         dashboard_url = f"https://{_pages_owner}.github.io/{_pages_repo}/"
         dashboard_link_html = (
-            f'<div style="margin-top:10px;"><a href="{dashboard_url}" '
-            f'style="font-size:12.5px;color:#E0E7FF;font-weight:600;text-decoration:underline;">'
-            f"Xem bảng giá tương tác (lọc, tìm kiếm, biểu đồ theo sản phẩm) \u2192</a></div>"
+            f'<div style="margin-top:6px;"><a href="{dashboard_url}" '
+            f'style="font-size:13px;color:#3B5BDB;">'
+            f"Xem bảng giá tương tác (lọc, tìm kiếm, biểu đồ theo sản phẩm)</a></div>"
         )
 
     return f"""\
@@ -1958,18 +1923,18 @@ def build_html(categories_data, timestamp):
   .fold-toggle:not(:checked) ~ .fold-label .fold-arrow {{ transform:rotate(-90deg); }}
 </style>
 </head>
-<body style="margin:0;padding:0;background:#eef1f5;font-family:'Segoe UI',Helvetica,Arial,sans-serif;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef1f5;padding:24px 0;">
+<body style="margin:0;padding:0;background:#F4F5F7;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;color:#1D2129;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F4F5F7;padding:24px 0;">
 <tr><td align="center">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:680px;background:#ffffff;border-radius:16px;overflow:hidden;">
-<tr><td style="background-color:#4338CA;background-image:linear-gradient(135deg,#4338CA,#6366F1);padding:30px 28px;">
-<div style="font-size:21px;font-weight:700;color:#ffffff;">💻 Bảng giá RAM · SSD · Laptop</div>
-<div style="font-size:13px;color:#E0E7FF;margin-top:6px;">Cập nhật {escape(timestamp)}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:680px;background:#ffffff;border:1px solid #E2E4E8;border-radius:8px;overflow:hidden;">
+<tr><td style="padding:18px 20px 16px;border-bottom:1px solid #E2E4E8;">
+<div style="font-size:20px;font-weight:600;line-height:1.3;color:#1D2129;">Bảng giá RAM · SSD · Laptop</div>
+<div style="font-size:13px;color:#596170;margin-top:2px;">Cập nhật {escape(timestamp)}</div>
 {dashboard_link_html}
 </td></tr>
 {''.join(type_blocks)}
-<tr><td style="padding:22px 28px;background:#f8fafc;border-top:1px solid #eef0f3;margin-top:20px;">
-<div style="font-size:11px;color:#94a3b8;line-height:1.6;">
+<tr><td style="padding:16px 20px;background:#F7F8FA;border-top:1px solid #E2E4E8;">
+<div style="font-size:12px;color:#6E7581;line-height:1.6;">
 Đây là giá niêm yết tại các cửa hàng ở thời điểm quét, không phải giá thị
 trường trung bình. Mỗi mục vẫn là giá riêng của từng cửa hàng, đặt cạnh
 nhau để tiện so sánh, không phải một chỉ số thị trường thống nhất. Email
